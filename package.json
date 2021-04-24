@@ -1,0 +1,19 @@
+{
+  "name": "daily-test",
+  "version": "1.0.0",
+  "description": "前端学习之路随手代码",
+  "main": "optionalChain.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dengfenglai0212/daily-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dengfenglai0212/daily-test/issues"
+  },
+  "homepage": "https://github.com/dengfenglai0212/daily-test#readme"
+}
