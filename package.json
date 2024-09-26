@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/dengfenglai0212/daily-test/issues"
   },
-  "homepage": "https://github.com/dengfenglai0212/daily-test#readme"
+  "homepage": "https://github.com/dengfenglai0212/daily-test#readme",
+  "dependencies": {
+    "less": "^4.2.0"
+  }
 }

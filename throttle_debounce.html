@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="height: 2000px;">Scroll me</div>
+    <div class="float-wrapper">我是文档流</div>
+    <div class="float-wrapper">我是文档流</div>
+    <span class="inline-wrapper">内联元素</span>
+    <span>内联元素</span>
+    <span>内联元素</span>
+    <input id="search"></input>
+    <style>
+      body {
+        margin: 0 auto;
+      }
+      .float-wrapper {
+        background-color: blue;
+        margin: 20px;
+        padding: 0;
+      }
+      .inline-wrapper {
+        display: inline-block;
+        width: 200px;
+        background-color: brown;
+        color: aqua;
+      }
+    </style>
+  </body>
+  <script>
+    // 防抖
+    function debounce(fn, delay) {
+      let timer = null;
+      return function (...args) {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(() => {
+          fn.apply(this, args);
+        }, delay);
+      };
+    }
+    //节流
+    function throttle(fn,delay){
+        let last = 0
+        let timer = null
+        return function(...args){
+          let now = Date.now()
+          let remaining = delay- (now - last)
+          if(remaining <=0){
+            last = now
+            fn.apply(this,args)
+          }else{
+            if(!timer){
+              timer = setTimeout(()=>{
+                last = Date.now()
+                timer = null
+                fn.apply(this,args)
+              },remaining)
+            }
+          }
+        }
+    }
+
+    // 使用示例
+    const input = document.getElementById("search");
+    input.addEventListener(
+      "input",
+      debounce((tim='123') => {
+        console.log("Input event triggered",tim);
+      }, 300)
+    );
+
+    // 定义一个处理滚动的函数
+  function handleScroll(mmo) {
+    console.log('Scroll event triggered',mmo);
+  }
+
+  // 创建节流函数，时间间隔为 1000 毫秒
+  const throttledScroll = throttle(handleScroll('00'), 1000);
+
+  // 监听滚动事件，使用节流函数处理
+  window.addEventListener('scroll', throttledScroll);
+  </script>
+</html>
