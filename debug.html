@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>断点调试</title>
-</head>
-<body>
-    <div>
-        模块内容
-    </div>
+  </head>
+  <body>
+    <div class="circle"></div>
+    <div class="square"></div>
     <script>
-        console.log('断点调试')
-        let testNum = 1
-        debugger
-        console.log(testNum)
-        let flag = false
-        while (testNum < 20) {
-            testNum++
-        }
-        console.log(testNum)
+      console.log("断点调试");
+      let testNum = 1;
+    //   debugger;
+      console.log(testNum);
+      let flag = false;
+      while (testNum < 20) {
+        testNum++;
+      }
+      console.log(testNum);
     </script>
-</body>
+    <style>
+.circle {
+  background-color: red;
+  width: 100px;
+  height: 50px;
+  border-radius: 0px 0px 100px 100px;
+}
+.square {
+  width: 20%;
+  height: 0;
+  padding-top: 10%;
+  background: orange;
+}
+    </style>
+  </body>
 </html>

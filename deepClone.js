@@ -14,12 +14,20 @@ function deepClone(obj, map = new WeakMap()) {
 
   return clone;
 }
-const source = { a: 1, b: { c: 2 } };
-Object.keys(source).forEach((key) => {
-  console.log('....',key)
-})
-// source.d = source
-const deepCopy = deepClone(source);
+// const source = { a: 1, b: { c: 2 } };
+// Object.keys(source).forEach((key) => {
+//   console.log('....',key)
+// })
+// // source.d = source
+// const deepCopy = deepClone(source);
 
-deepCopy.b.c = 3;
-console.log(source.b.c); // 输出: 2，源对象未被影响
+// deepCopy.b.c = 3;
+// console.log(source.b.c); // 输出: 2，源对象未被影响
+let test = {
+  a: 1,
+  b:2
+}
+
+let dep = deepClone(test)
+test.a = 2
+console.log(test, dep)
