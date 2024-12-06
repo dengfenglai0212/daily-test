@@ -4,6 +4,15 @@ function numsIsland(grid) {
   }
   let rows = grid.length
   let cols = grid[0].length
+  let res = 0
+  for (let r = 0; r < rows; r++){
+    for (let c = 0; c < cols; c++){
+      if (grid[r][c] === '1') {
+        res++
+        dfs(r, c)
+      }
+    }
+  }
   function dfs(row, col) {
     if (row < 0 || row >= rows || col < 0 || col >= cols || grid[row][col] === '0') {
       return
@@ -13,15 +22,6 @@ function numsIsland(grid) {
     dfs(row + 1, col)
     dfs(row, col + 1)
     dfs(row, col - 1)
-  }
-  let res = 0
-  for (let r = 0; r < rows; r++){
-    for (let c = 0; c < cols; c++){
-      if (grid[r][c] === '1') {
-        res++
-        dfs(r, c)
-      }
-    }
   }
   return res
 }
